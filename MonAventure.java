@@ -6,6 +6,16 @@ import labyrinthe.code_squelette.Labyrinthe;
 import labyrinthe.code_squelette.Piece;
 
 public class MonAventure extends Aventure implements Labyrinthe{
+    // Suggestion de IntelliJ faire un constructeur MonAventure
+    /**
+     * Initialize une Aventure avec un Labyrinthe
+     *
+     * @param c - la carte de l'Aventure
+     */
+    public MonAventure(Labyrinthe c) {
+        super(c);
+    }
+
     @Override
     public Piece[] getPieces() {
         return new Piece[0];
@@ -38,6 +48,8 @@ public class MonAventure extends Aventure implements Labyrinthe{
 
     @Override
     public boolean estPacifique() {
+        carte.getPieces(); // boucle if iterer a travers le tableau pour voir les types de pieces et returner faux
+                           // quand il y a monstre ou boss et else return vrai
         return false;
     }
 
