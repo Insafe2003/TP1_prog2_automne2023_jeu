@@ -1,10 +1,11 @@
 package labyrinthe.soumission;
 
+import labyrinthe.code_squelette.Aventure;
 import labyrinthe.code_squelette.Exterieur;
 import labyrinthe.code_squelette.Labyrinthe;
 import labyrinthe.code_squelette.Piece;
 
-public class MonAventure implements Labyrinthe {
+public class MonAventure extends Aventure implements Labyrinthe{
     @Override
     public Piece[] getPieces() {
         return new Piece[0];
@@ -35,4 +36,28 @@ public class MonAventure implements Labyrinthe {
         return new Piece[0];
     } // extends ? implements?
 
+    @Override
+    public boolean estPacifique() {
+        return false;
+    }
+
+    @Override
+    public boolean contientDuTresor() {
+        return false;
+    }
+
+    @Override
+    public int getTresorTotal() {
+        return 0;
+    }
+
+    @Override
+    public boolean contientBoss() {
+        return false;
+    }
+
+    @Override
+    public Piece[] cheminJusquAuBoss() {
+        return new Piece[0];
+    }
 }
