@@ -1,9 +1,6 @@
 package labyrinthe.soumission;
 
-import labyrinthe.code_squelette.Aventure;
-import labyrinthe.code_squelette.Exterieur;
-import labyrinthe.code_squelette.Labyrinthe;
-import labyrinthe.code_squelette.Piece;
+import labyrinthe.code_squelette.*;
 
 public class MonAventure extends Aventure implements Labyrinthe{
     // Suggestion de IntelliJ faire un constructeur MonAventure
@@ -48,8 +45,18 @@ public class MonAventure extends Aventure implements Labyrinthe{
 
     @Override
     public boolean estPacifique() {
-        carte.getPieces(); // boucle if iterer a travers le tableau pour voir les types de pieces et returner faux
+        Piece[] tab = carte.getPieces(); // boucle if iterer a travers le tableau pour voir les types de pieces et returner faux
                            // quand il y a monstre ou boss et else return vrai
+
+        for (int i=0;i<tab.length; i++){
+            if (tab[i].getRencontre()== Rencontre.MONSTRE || tab[i].getRencontre()== Rencontre.BOSS) {
+                break;
+            }
+            else{
+
+                return true;
+            }
+        }
         return false;
     }
 
